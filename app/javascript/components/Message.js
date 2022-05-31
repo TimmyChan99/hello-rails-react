@@ -1,26 +1,24 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from "prop-types"
-import { createStructuredSelector } from 'reselect'
-import { connect } from "react-redux";
-import { getMessagesAction } from "../configureStore";
+import { getMessagesAPI } from "../configureStore";
 
 const Message = () =>  {
 
-  const dispatch = useDispatch();
   const fetchedMessages = useSelector((state) => state)
-
-  const getMessages = () => {
-    console.log('action test');
-    dispatch(getMessagesAction())
-  }
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getMessagesAPI())
+  }, [])
+  
   
     return (
       <React.Fragment>
-        <h5><span>Greeting:</span>{ fetchedMessages.greeting }</h5>
+        <span>Greeting:</span>
+        <h3>{ fetchedMessages.greeting }</h3>
         <button
         className="getMessages"
-        onClick={ () => { getMessages() }}
+        onClick={ () => { dispatch(getMessagesAPI()) }}
         >click</button>
       </React.Fragment>
     );
