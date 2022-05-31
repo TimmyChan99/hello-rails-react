@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { useDispatch, useSelector } from 'react-redux';
 import { getMessagesAPI } from "../configureStore";
 
-const Message = () =>  {
+const Greeting = () =>  {
 
   const fetchedMessages = useSelector((state) => state)
   const dispatch = useDispatch();
@@ -24,5 +24,5 @@ const Message = () =>  {
   
 }
 
-export default Message
+export default Greeting
 
