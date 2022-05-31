@@ -71,5 +71,6 @@ group :test do
   gem 'webdrivers'
 end
 
+# React
 gem 'react-rails'
 gem 'webpacker'
