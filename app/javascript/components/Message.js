@@ -27,14 +27,3 @@ const Message = () =>  {
 
 export default Message
 
-// const struturedSelector = createStructuredSelector({
-//   message: state => state.message,
-// })
-
-// const mapDispatchToProps = { getMessages };
-
-// Message.propTypes = {
-//   greeting: PropTypes.string
-// };
-
-// export default connect(struturedSelector, mapDispatchToProps)(Message);

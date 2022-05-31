@@ -1,5 +1,6 @@
 class V1::GreetingsController < ApplicationController
 def index
-	render json: { messages: 'Hello!!' }.to_json
+	@message = Message.find( Random.rand(1..5))
+	render json: { messages: @message.message }.to_json
 end
 end
